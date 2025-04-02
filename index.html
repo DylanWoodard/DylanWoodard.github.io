@@ -1,217 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Interwoven Networks</title>
-    <style>
-        /* Reset and basic setup */
-        html, body {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          height: 100%;
-          width: 100%;
-          font-family: Arial, sans-serif;
-          background-color: #000; /* Black fallback background */
-          color: #fff;            /* White text */
-          overflow-x: hidden;
-        }
-
-        /* Canvas for the starry constellation */
-        #constellation {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1; /* Put behind the text content */
-        }
-
-        /* Main content container */
-        .content {
-          position: relative;
-          z-index: 1;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 80px 20px;
-          text-align: center;
-        }
-
-        header {
-          margin-bottom: 60px;
-        }
-
-        h1 {
-          font-size: 3rem;
-          margin-bottom: 20px;
-        }
-
-        p {
-          font-size: 1.2rem;
-          line-height: 1.6;
-          max-width: 800px;
-          margin: 0 auto 40px auto;
-        }
-
-        .cta-btn {
-          display: inline-block;
-          padding: 15px 30px;
-          font-size: 1rem;
-          text-decoration: none;
-          background-color: #444;
-          color: #fff;
-          border-radius: 4px;
-          transition: background-color 0.3s ease;
-          margin-top: 20px;
-        }
-
-        .cta-btn:hover {
-          background-color: #666;
-        }
-
-        footer {
-          margin-top: 60px;
-          font-size: 0.9rem;
-          opacity: 0.7;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Network Name - Expert Network Installations</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="particle-canvas"></div>
 
-<!-- Canvas that holds the moving constellation -->
-<canvas id="constellation"></canvas>
+<div class="content-wrapper">
 
-<!-- Main Page Content -->
-<div class="content">
     <header>
-        <h1>Interwoven Networks</h1>
-        <p>
-            We provide end-to-end network infrastructure setup—handling the full process,
-            from running cable to installing and configuring network switches, access points, and IP cameras.
-        </p>
-        <a class="cta-btn" href="#contact">Get in Touch</a>
+        <div class="container">
+            <h1>Dylan Woodard Networks</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section>
-        <h2>Our Process</h2>
-        <p>
-            From initial consultation to final testing, we handle everything to ensure
-            a seamless, robust network for your business. We focus on quality and reliability,
-            so you can focus on what matters most.
-        </p>
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <h2>Connecting Your World, Seamlessly.</h2>
+            <p>End-to-end network infrastructure solutions, from initial cabling to final configuration. We build the reliable backbone for your digital operations.</p>
+            <a href="#contact" class="cta-button">Get a Free Consultation</a>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>
-            Ready to discuss your network needs? Reach out today to learn
-            how we can help bring your projects to life.
-        </p>
-        <p>
-            <strong>Email:</strong> info@yourbusiness.com<br />
-            <strong>Phone:</strong> (123) 456-7890
-        </p>
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Structured Cabling</h3>
+                    <p>Professional installation of Cat5e, Cat6, Cat6a, and fiber optic cabling for robust data transmission.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Network Hardware Installation</h3>
+                    <p>Setup and configuration of routers, switches, firewalls, and patch panels for optimal performance.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Wireless Access Points</h3>
+                    <p>Designing and deploying seamless Wi-Fi coverage with strategically placed access points.</p>
+                </div>
+                <div class="service-item">
+                    <h3>IP Camera Systems</h3>
+                    <p>Installation and configuration of network-based surveillance cameras for security and monitoring.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Network Configuration & Optimization</h3>
+                    <p>Ensuring your network is secure, efficient, and tailored to your specific business needs.</p>
+                </div>
+                <div class="service-item">
+                    <h3>End-to-End Setup</h3>
+                    <p>We handle the entire process, providing a turnkey network solution ready for your operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At [Your Network Name], we believe a strong network is the foundation of modern business. We are dedicated professionals specializing in the design, installation, and management of comprehensive network infrastructures. Our commitment is to provide reliable, scalable, and secure solutions tailored to each client's unique requirements.</p>
+            <p>With years of experience and a focus on quality workmanship, we ensure your connectivity is never a bottleneck.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get Connected</h2>
+            <p>Ready to upgrade your network infrastructure or start a new project? Contact us today for a personalized quote.</p>
+            {/* Replace with your actual contact form or details */}
+            <div class="contact-details">
+                <p>Email: <a href="mailto:info@yournetworkname.com">info@yournetworkname.com</a></p>
+                <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
+                {/* Add a contact form here if desired */}
+            </div>
+        </div>
     </section>
 
     <footer>
-        &copy; <span id="year"></span> Interwoven Networks. All rights reserved.
+        <div class="container">
+            <p>&copy; 2025 Your Network Name. All Rights Reserved.</p>
+            {/* Add social media links if desired */}
+        </div>
     </footer>
-</div>
 
-<!-- JavaScript for constellation effect -->
-<script>
-    const canvas = document.getElementById('constellation');
-    const ctx = canvas.getContext('2d');
-
-    // Set the canvas to match browser size
-    let width = window.innerWidth;
-    let height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-
-    // Listen for browser resizing
-    window.addEventListener('resize', () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-    });
-
-    // Particle class
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        // Random speed in either direction
-        this.vx = (Math.random() - 0.5) * 0.7;
-        this.vy = (Math.random() - 0.5) * 0.7;
-        // Radius of the star/particle
-        this.radius = Math.random() * 2 + 2; // range [2, 4]
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        ctx.fillStyle = '#ffffff';
-        ctx.fill();
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Wrap around the edges
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
-      }
-    }
-
-    // Create an array of particles
-    const particles = [];
-    const particleCount = 200; // Increase or decrease for denser/sparser stars
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    function animate() {
-      // Paint a black rectangle each frame to clear old positions
-      ctx.fillStyle = 'rgba(0, 0, 0, 1)';
-      ctx.fillRect(0, 0, width, height);
-
-      // Draw and update each particle
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].draw();
-        particles[i].update();
-      }
-
-      // Connect particles if they are close enough
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          // If the distance is less than some threshold, draw a connecting line
-          if (dist < 100) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-            ctx.stroke();
-          }
-        }
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    // Start animation
-    animate();
-
-    // Update footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+</div> <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
