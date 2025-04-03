@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Network Name - Expert Network Installations</title>
+    <title>AetherLink Networks</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,12 +17,15 @@
 
     <header>
         <div class="container">
-            <h1>Dylan Woodard Networks</h1>
+            <h1>AetherLink</h1>
             <nav>
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#estimator">Estimate</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -27,7 +33,7 @@
     </header>
 
     <section id="hero" class="hero-section">
-        <div class="container">
+        <div class="container" data-aos="fade-in" data-aos-duration="1000">
             <h2>Connecting Your World, Seamlessly.</h2>
             <p>End-to-end network infrastructure solutions, from initial cabling to final configuration. We build the reliable backbone for your digital operations.</p>
             <a href="#contact" class="cta-button">Get a Free Consultation</a>
@@ -36,29 +42,29 @@
 
     <section id="services" class="services-section">
         <div class="container">
-            <h2>Our Expertise</h2>
+            <h2 data-aos="fade-up">Our Expertise</h2>
             <div class="service-grid">
-                <div class="service-item">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
                     <h3>Structured Cabling</h3>
                     <p>Professional installation of Cat5e, Cat6, Cat6a, and fiber optic cabling for robust data transmission.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="150">
                     <h3>Network Hardware Installation</h3>
                     <p>Setup and configuration of routers, switches, firewalls, and patch panels for optimal performance.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
                     <h3>Wireless Access Points</h3>
                     <p>Designing and deploying seamless Wi-Fi coverage with strategically placed access points.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250">
                     <h3>IP Camera Systems</h3>
                     <p>Installation and configuration of network-based surveillance cameras for security and monitoring.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
                     <h3>Network Configuration & Optimization</h3>
                     <p>Ensuring your network is secure, efficient, and tailored to your specific business needs.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="350">
                     <h3>End-to-End Setup</h3>
                     <p>We handle the entire process, providing a turnkey network solution ready for your operations.</p>
                 </div>
@@ -66,35 +72,132 @@
         </div>
     </section>
 
-    <section id="about" class="about-section">
+    <section id="portfolio" class="portfolio-section">
         <div class="container">
+            <h2 data-aos="fade-up">Our Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/case-study-1.jpg" alt="Neat Cabling Project">
+                    <div class="portfolio-info">
+                        <h3>Office Network Overhaul</h3>
+                        <p>Complete Cat6a installation and rack cleanup for a growing tech company.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/case-study-2.jpg" alt="Wireless Access Point Installation">
+                    <div class="portfolio-info">
+                        <h3>Warehouse Wi-Fi Deployment</h3>
+                        <p>Strategically placed Ubiquiti access points for seamless coverage across a large facility.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/case-study-3.jpg" alt="IP Camera System Setup">
+                    <div class="portfolio-info">
+                        <h3>Retail Store IP Camera System</h3>
+                        <p>Multi-camera setup with NVR for enhanced security and remote monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="estimator" class="estimator-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Get a Quick Estimate</h2>
+            <p data-aos="fade-up" data-aos-delay="50">Fill out the details below for a preliminary estimate. For an exact quote, please request a full consultation.</p>
+            <form id="estimator-form" data-aos="fade-up" data-aos-delay="100">
+                <div class="form-group">
+                    <label for="office-size">Approx. Office Size:</label>
+                    <select id="office-size" name="office-size">
+                        <option value="small">Small (1-10 Users)</option>
+                        <option value="medium">Medium (11-50 Users)</option>
+                        <option value="large">Large (51+ Users)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data-drops">Number of Network Ports/Drops:</label>
+                    <input type="number" id="data-drops" name="data-drops" min="0" placeholder="e.g., 15">
+                </div>
+                <div class="form-group">
+                    <label for="wifi">Need Wi-Fi Access Points?</label>
+                    <select id="wifi" name="wifi">
+                        <option value="no">No</option>
+                        <option value="yes_basic">Yes - Basic Coverage</option>
+                        <option value="yes_full">Yes - Full Seamless Coverage</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cameras">Number of IP Cameras (if any):</label>
+                    <input type="number" id="cameras" name="cameras" min="0" placeholder="e.g., 4">
+                </div>
+                <button type="submit" class="cta-button estimator-button">Calculate Ballpark</button>
+            </form>
+            <div id="estimate-result" class="estimate-result" data-aos="fade-up">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="about-section">
+        <div class="container" data-aos="fade-up">
             <h2>About Us</h2>
-            <p>At [Your Network Name], we believe a strong network is the foundation of modern business. We are dedicated professionals specializing in the design, installation, and management of comprehensive network infrastructures. Our commitment is to provide reliable, scalable, and secure solutions tailored to each client's unique requirements.</p>
+            <p>At <strong>AetherLink Networks</strong>, we believe a strong network is the foundation of modern business. We are dedicated professionals specializing in the design, installation, and management of comprehensive network infrastructures. Our commitment is to provide reliable, scalable, and secure solutions tailored to each client's unique requirements.</p>
             <p>With years of experience and a focus on quality workmanship, we ensure your connectivity is never a bottleneck.</p>
         </div>
     </section>
 
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 data-aos="fade-up">What Our Clients Say</h2>
+            <div class="testimonial-carousel" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-item">
+                    <blockquote>
+                        <p>"The team did an amazing job cleaning up our server room mess. Network speeds have improved drastically!"</p>
+                        <cite>– Jane D., Office Manager, TechCorp</cite>
+                    </blockquote>
+                </div>
+                <div class="testimonial-item">
+                    <blockquote>
+                        <p>"Reliable, professional, and very knowledgeable. They set up our new office network flawlessly."</p>
+                        <cite>– John S., Small Business Owner</cite>
+                    </blockquote>
+                </div>
+                <div class="testimonial-item">
+                    <blockquote>
+                        <p>"Excellent Wi-Fi coverage throughout our entire warehouse now. Highly recommended!"</p>
+                        <cite>– Logistics Manager, Warehouse Solutions</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Get Connected</h2>
-            <p>Ready to upgrade your network infrastructure or start a new project? Contact us today for a personalized quote.</p>
-            {/* Replace with your actual contact form or details */}
-            <div class="contact-details">
+            <h2 data-aos="fade-up">Get Connected</h2>
+            <p data-aos="fade-up" data-aos-delay="50">Ready to upgrade your network infrastructure or start a new project? Contact us today for a personalized quote or book a consultation directly.</p>
+            <div class="contact-details" data-aos="fade-up" data-aos-delay="100">
                 <p>Email: <a href="mailto:contact@dylanwoodardnetworks.com">contact@dylanwoodardnetworks.com</a></p>
                 <p>Phone: <a href="tel:+16159269847">(615) 926-9847</a></p>
-                {/* Add a contact form here if desired */}
+                <p style="margin-top: 1.5rem;">
+                    <a href="YOUR_CALENDLY_OR_BOOKING_LINK_HERE" target="_blank" class="cta-button">Book a Consultation Online</a>
+                </p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Network Name. All Rights Reserved.</p>
-            {/* Add social media links if desired */}
+            <p>&copy; 2025 AetherLink Networks. All Rights Reserved.</p>
         </div>
     </footer>
 
 </div> <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 <script src="app.js"></script>
+
 </body>
 </html>

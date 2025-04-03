@@ -1,8 +1,12 @@
+/* ---------------------------------------------------- */
+/* --------------- Particle JS Config ----------------- */
+/* ---------------------------------------------------- */
+
 particlesJS("particle-canvas", {
   "particles": {
     "number": {
       // Adjust for desired density. More particles = more computation. Start lower.
-      "value": 250, // Maybe start with 150-250 and increase if performance allows
+      "value": 250, // Adjusted slightly
       "density": {
         "enable": true,
         "value_area": 800 // Higher value = particles are more spread out
@@ -22,17 +26,17 @@ particlesJS("particle-canvas", {
       }
     },
     "opacity": {
-      "value": 0.9, // Opacity of dots
+      "value": 1, // Opacity of dots - Adjusted slightly
       "random": true,
       "anim": {
         "enable": true,
-        "speed": 0.8,
-        "opacity_min": 0.4,
+        "speed": 0.6, // Slowed down opacity animation slightly
+        "opacity_min": 0.3,
         "sync": false
       }
     },
     "size": {
-      "value": 3, // Size of dots (keep small for 'tiny dots')
+      "value": 2.5, // Size of dots (keep small for 'tiny dots') - Adjusted slightly
       "random": true,
       "anim": {
         "enable": false,
@@ -43,14 +47,14 @@ particlesJS("particle-canvas", {
     },
     "line_linked": {
       "enable": true, // This creates the network connection effect
-      "distance": 120, // How close particles need to be to link
+      "distance": 130, // How close particles need to be to link - Adjusted slightly
       "color": "#4db8ff", // Color of the connecting lines (matches accent)
-      "opacity": 0.8, // Opacity of the lines (keep subtle)
-      "width": 1.5
+      "opacity": 0.6, // Opacity of the lines (keep subtle) - Adjusted slightly
+      "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 1.5, // Speed particles move around
+      "speed": 1.2, // Speed particles move around - Adjusted slightly
       "direction": "none", // Particles move in random directions
       "random": true,
       "straight": false,
@@ -78,7 +82,7 @@ particlesJS("particle-canvas", {
     },
     "modes": {
       "grab": {
-        "distance": 140,
+        "distance": 150, // Increased grab distance slightly
         "line_opacity": 0.8 // Make grabbed lines slightly more visible
       },
       "bubble": {
@@ -89,11 +93,11 @@ particlesJS("particle-canvas", {
         "speed": 3
       },
       "repulse": {
-        "distance": 100,
+        "distance": 100, // Adjusted repulse distance
         "duration": 0.4
       },
       "push": {
-        "particles_nb": 4 // Number of particles to add on click
+        "particles_nb": 3 // Reduced particles added on click slightly
       },
       "remove": {
         "particles_nb": 2
@@ -103,9 +107,101 @@ particlesJS("particle-canvas", {
   "retina_detect": true // Adjusts particle density for high-DPI screens
 });
 
-// Note: The "shift and move as users scroll" effect is primarily achieved
-// by having the #particle-canvas set to 'position: fixed' in CSS.
-// The content scrolls over the continuously animating background, creating
-// a parallax-like effect where the background seems to shift relative
-// to the content. More complex scroll-linked animation speed changes
-// would require custom JavaScript listening to scroll events.
+
+/* ---------------------------------------------------- */
+/* --------------- AOS Initialization ----------------- */
+/* ---------------------------------------------------- */
+
+AOS.init({
+  duration: 800, // values from 0 to 3000, with step 50ms
+  easing: 'ease-in-out', // default easing for AOS animations
+  once: true, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+});
+
+
+/* ---------------------------------------------------- */
+/* ------------- Custom Functionality JS -------------- */
+/* ---------------------------------------------------- */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Estimator Form Logic (Placeholder) ---
+    const estimatorForm = document.getElementById('estimator-form');
+    const estimateResultDiv = document.getElementById('estimate-result');
+
+    if (estimatorForm) {
+        estimatorForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent actual form submission
+
+            // *** START: ADD YOUR ESTIMATION LOGIC HERE ***
+            console.log('Estimator form submitted');
+            // 1. Get values from form inputs:
+            //    const size = document.getElementById('office-size').value;
+            //    const drops = parseInt(document.getElementById('data-drops').value) || 0;
+            //    const wifi = document.getElementById('wifi').value;
+            //    const cameras = parseInt(document.getElementById('cameras').value) || 0;
+
+            // 2. Implement your pricing logic based on these values
+            //    let basePrice = 0;
+            //    let dropPrice = drops * YOUR_PRICE_PER_DROP;
+            //    // ... etc. for size, wifi, cameras ...
+            //    let totalPrice = basePrice + dropPrice + ... ;
+            let estimatedCost = "Calculation logic needed"; // Placeholder
+
+            // 3. Display the result
+            if (estimateResultDiv) {
+                 // Example: Displaying a simple text result. You might want to format it better.
+                 estimateResultDiv.innerHTML = `
+                    <p><strong>Preliminary Estimate:</strong> ${estimatedCost}</p>
+                    <p><small>Note: This is a rough estimate. Please contact us for a detailed quote.</small></p>
+                `;
+                estimateResultDiv.style.display = 'block'; // Make sure it's visible
+            }
+             // *** END: ESTIMATION LOGIC ***
+        });
+    }
+
+    // --- Carousel Initialization (Placeholder) ---
+    // If you add SwiperJS or Flickity, initialize them here.
+    // Example for SwiperJS (make sure you've included Swiper's CSS/JS):
+    /*
+    const testimonialSwiper = new Swiper('.testimonial-carousel', {
+        // Optional parameters
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        pagination: {
+            el: '.swiper-pagination', // Add pagination divs in HTML if needed
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next', // Add button divs in HTML if needed
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    const portfolioSwiper = new Swiper('.portfolio-grid', { // Or a dedicated carousel container
+        // Configuration for portfolio slider
+        slidesPerView: 1,
+        spaceBetween: 30,
+         breakpoints: {
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            }
+          }
+        // ... other options
+    });
+    */
+   console.log('Website scripts loaded.');
+
+});
+
+// Add any other general JavaScript functionality here
